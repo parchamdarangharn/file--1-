@@ -683,3 +683,16 @@ header .fa-times{
 .comment-form input[type="submit"]:hover {
     background: #16a085;
 }
+.comments .heading {
+    color: #333;
+}
+
+.comments .title {
+    color: #666;
+}
+
+.comment-box h3,
+.comment-box p,
+.comment-form h2 {
+    color: #333;
+}
