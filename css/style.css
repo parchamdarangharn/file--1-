@@ -675,7 +675,4 @@ header .fa-times{
 
 .comment-form input[type="submit"]:hover {
     background: var(--violet);
-  }
- body {
-    background: red !important;
 }
