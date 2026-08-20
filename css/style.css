@@ -624,3 +624,55 @@ header .fa-times{
   }
 
 }
+.comments {
+    padding: 5rem 7%;
+    background: #f9f9f9;
+}
+
+.comments-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.comment-box,
+.comment-form {
+    background: #fff;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+    box-shadow: 0 .3rem .5rem rgba(0,0,0,.2);
+}
+
+.comment-box h3,
+.comment-form h2 {
+    color: var(--pink);
+    margin-bottom: 1rem;
+}
+
+.comment-box p {
+    color: #666;
+    font-size: 1.5rem;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    border: .1rem solid #ddd;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+}
+
+.comment-form input[type="submit"] {
+    width: 17rem;
+    background: var(--pink);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.comment-form input[type="submit"]:hover {
+    background: var(--violet);
+}
