@@ -622,4 +622,17 @@ header .fa-times{
     width:90%;
     padding:0;
   }
+
+  .required-star {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
 }

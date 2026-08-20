@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ثبت نام | مدرسه پرچمداران قرن</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+
+    <a href="index.html" class="logo">
+        <i class="fas fa-graduation-cap"></i>
+        پرچمداران قرن
+    </a>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">خانه</a></li>
+            <li><a href="index.html#about">درباره ما</a></li>
+            <li><a href="index.html#teacher">معلمین</a></li>
+            <li><a href="index.html#course">آموزش ها</a></li>
+            <li><a href="index.html#contact">تماس با ما</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+
+<section class="contact">
+
+    <h1 class="heading">فرم ثبت نام</h1>
+
+    <h3 class="title">
+        لطفاً اطلاعات زیر را با دقت وارد کنید
+    </h3>
+
+    <p style="text-align:center;">
+        موارد دارای <span class="required-star">*</span> اجباری هستند.
+    </p>
+
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/contact-img.svg" alt="ثبت نام">
+        </div>
+
+
+        <div class="form-container">
+
+            <form id="registerForm">
+
+                <!-- نام -->
+                <label>
+                    نام
+                    <span class="required-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    name="first_name"
+                    placeholder="نام دانش‌آموز"
+                    required
+                >
+
+
+                <!-- نام خانوادگی -->
+                <label>
+                    نام خانوادگی
+                    <span class="required-star">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    name="last_name"
+                    placeholder="نام خانوادگی دانش‌آموز"
+                    required
+                >
+
+
+                <!-- شماره پدر -->
+                <label>
+                    شماره موبایل پدر
+                    <span class="required-star">*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    name="father_phone"
+                    placeholder="مثلاً 09123456789"
+                    required
+                >
+
+
+                <!-- شماره مادر -->
+                <label>
+                    شماره موبایل مادر
+                    <span class="required-star">*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    name="mother_phone"
+                    placeholder="مثلاً 09123456789"
+                    required
+                >
+
+
+                <!-- پایه تحصیلی -->
+                <label>
+                    پایه تحصیلی
+                    <span class="required-star">*</span>
+                </label>
+
+                <select name="grade" required>
+
+                    <option value="">
+                        پایه تحصیلی را انتخاب کنید
+                    </option>
+
+                    <option value="پیش دبستان">
+                        پیش دبستان
+                    </option>
+
+                    <option value="اول ابتدایی">
+                        اول ابتدایی
+                    </option>
+
+                    <option value="دوم ابتدایی">
+                        دوم ابتدایی
+                    </option>
+
+                    <option value="سوم ابتدایی">
+                        سوم ابتدایی
+                    </option>
+
+                    <option value="چهارم ابتدایی">
+                        چهارم ابتدایی
+                    </option>
+
+                    <option value="پنجم ابتدایی">
+                        پنجم ابتدایی
+                    </option>
+
+                    <option value="ششم ابتدایی">
+                        ششم ابتدایی
+                    </option>
+
+                </select>
+
+
+                <!-- توضیحات -->
+                <label>
+                    توضیحات
+                </label>
+
+                <textarea
+                    name="description"
+                    cols="30"
+                    rows="8"
+                    placeholder="اگر توضیحی دارید اینجا بنویسید">
+                </textarea>
+
+
+                <!-- دکمه -->
+                <input
+                    type="submit"
+                    value="ارسال درخواست ثبت نام"
+                >
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="footer">
+
+    <div class="icons">
+
+        <a href="#" class="fab fa-instagram"></a>
+
+        <a href="#" class="fab fa-telegram"></a>
+
+    </div>
+
+</section>
+
+
+</body>
+</html>
