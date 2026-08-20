@@ -27,7 +27,7 @@
         <li><a href="#about">درباره ما</a></li>
         <li><a href="#teacher">معلمین</a></li>
         <li><a href="#course">آموزش ها</a></li>
-        <li><a href="#review">نظرات</a></li>
+        <li><a href="#comments">نظرات</a></li>
         <li><a href="#contact">تماس با ما</a></li>
     </ul>
 </nav>
@@ -98,7 +98,7 @@
 </a>
 
 
-</a>
+
         
     </div>
 
@@ -271,7 +271,9 @@
 </section>
 
 <!-- contact section ends -->
- ```html
+
+<!-- comments section starts -->
+
 <section class="comments" id="comments">
 
     <h1 class="heading">نظرات</h1>
@@ -283,24 +285,33 @@
     <div class="comments-container">
 
         <div class="comment-box">
-            <h3>نام دانش‌آموز</h3>
-            <p>مدرسه خیلی خوبی است.</p>
+            <h3>نظر دانش‌آموز</h3>
+            <p>اینجا اولین نظر نمایش داده می‌شود.</p>
         </div>
 
         <div class="comment-form">
 
             <h2>ثبت نظر</h2>
 
-            <form>
-                <input type="text" placeholder="نام شما" required>
+            <form id="commentForm">
+
+                <input
+                    type="text"
+                    placeholder="نام شما"
+                    required
+                >
 
                 <textarea
                     rows="6"
                     placeholder="نظر خود را بنویسید..."
-                    required>
-                </textarea>
+                    required
+                ></textarea>
 
-                <input type="submit" value="ارسال نظر">
+                <input
+                    type="submit"
+                    value="ارسال نظر"
+                >
+
             </form>
 
         </div>
@@ -309,6 +320,7 @@
 
 </section>
 
+<!-- comments section ends -->
 
 <section class="footer">
 

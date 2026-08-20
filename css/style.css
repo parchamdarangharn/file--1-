@@ -613,7 +613,7 @@ header .fa-times{
     flex-flow: column;
   }
 
-  .contact .row .image img{
+   .contact .row .image img{
     height:50vh;
     width:90vw;
   }
@@ -623,76 +623,4 @@ header .fa-times{
     padding:0;
   }
 
-  .required-star {
-    color: red;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.form-container label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 16px;
-}
-.comments {
-    padding: 5rem 7%;
-    background: #f8f9ff;
-}
-
-.comments-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.comment-box,
-.comment-form {
-    background: #fff;
-    padding: 2rem;
-    margin: 2rem 0;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-}
-
-.comment-box h3 {
-    margin-bottom: 1rem;
-}
-
-.comment-form h2 {
-    margin-bottom: 1.5rem;
-}
-
-.comment-form input,
-.comment-form textarea {
-    width: 100%;
-    padding: 1.2rem;
-    margin: 1rem 0;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1.5rem;
-    box-sizing: border-box;
-}
-
-.comment-form input[type="submit"] {
-    background: #1abc9c;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.comment-form input[type="submit"]:hover {
-    background: #16a085;
-}
-.comments .heading {
-    color: #333;
-}
-
-.comments .title {
-    color: #666;
-}
-
-.comment-box h3,
-.comment-box p,
-.comment-form h2 {
-    color: #333;
 }
