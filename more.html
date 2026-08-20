@@ -3,64 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>بیشتر بدانید</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            color: #222;
-        }
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 2;
-        }
-
-        .back {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 25px;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-        }
-
-        .back:hover {
-            background: #0056b3;
-        }
-    </style>
+    <!-- همان استایل صفحه اصلی -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <div class="container">
+<header>
 
-        <h1>بیشتر بدانید</h1>
+    <a href="index.html" class="logo">
+        <i class="fas fa-graduation-cap"></i> مدرسه پرچمداران قرن
+    </a>
 
-        <p>
-            اینجا می‌توانید اطلاعات کامل‌تر و توضیحات بیشتری درباره این بخش از سایت قرار دهید.
-        </p>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">خانه</a></li>
+            <li><a href="index.html#about">درباره ما</a></li>
+            <li><a href="index.html#teacher">معلمین</a></li>
+            <li><a href="index.html#course">آموزش ها</a></li>
+            <li><a href="index.html#review">نظرات</a></li>
+            <li><a href="index.html#contact">تماس با ما</a></li>
+        </ul>
+    </nav>
 
-        <a href="index.html" class="back">بازگشت به صفحه اصلی</a>
+    <div class="fas fa-bars"></div>
+
+</header>
+
+
+<section class="about">
+
+    <h1 class="heading">بیشتر بدانید</h1>
+    <h3 class="title">مدرسه غیر دولتی پسرانه پرچمداران قرن</h3>
+
+    <div class="row">
+
+        <div class="content">
+
+            <h3>
+                درباره مدرسه پرچمداران قرن
+            </h3>
+
+            <p>
+                مدرسه غیر دولتی پسرانه پرچمداران قرن
+                محیطی آموزشی برای رشد و پیشرفت دانش آموزان است.
+            </p>
+
+            <p>
+                در این مدرسه تلاش می‌شود با استفاده از
+                معلمان و برنامه‌های آموزشی مناسب،
+                دانش آموزان برای موفقیت در مسیر تحصیل آماده شوند.
+            </p>
+
+            <a href="index.html">
+                <button>بازگشت به صفحه اصلی</button>
+            </a>
+
+        </div>
+
+        <div class="image">
+            <img src="images/about-img.svg" alt="مدرسه پرچمداران قرن">
+        </div>
 
     </div>
+
+</section>
+
+
+<section class="footer">
+
+    <div class="icons">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-github"></a>
+    </div>
+
+</section>
 
 </body>
 </html>
