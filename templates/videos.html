@@ -19,20 +19,10 @@
 
         <h2>ویدیوی آموزشی</h2>
 
-        {% for video in videos %}
-
-<div class="admin-box">
-
-    <h2>ویدیوی آموزشی</h2>
-
-    <video width="100%" controls>
-        <source src="{{ url_for('static', filename='videos/' + video) }}" type="video/mp4">
-        مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-    </video>
-
-</div>
-
-{% endfor %}
+        <video width="100%" controls>
+            <source src="/videos/video.mp4" type="video/mp4">
+            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+        </video>
 
     </div>
 
