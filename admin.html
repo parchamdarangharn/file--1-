@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>پنل مدیریت</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="admin-page">
+
+    <h1 class="heading">پنل مدیریت</h1>
+
+    <h3 class="title">مدیریت ویدیوها</h3>
+
+    <div class="admin-box">
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+
+        <label for="video">انتخاب ویدیو:</label>
+
+        <input type="file" id="video" name="video" accept="video/*" required>
+
+        <button type="submit" class="btn">
+            آپلود ویدیو
+        </button>
+
+    </form>
+
+</div>
+
+</section>
+
+</body>
+</html>
