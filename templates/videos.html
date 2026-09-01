@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ویدیوهای آموزشی</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-<section class="exam-page">
+<section class="comments">
 
     <h1 class="heading">ویدیوهای آموزشی</h1>
 
-    <div class="admin-box">
+    <div class="comments-container">
 
-        <h2>ویدیوی آموزشی</h2>
+        {% if videos %}
 
-        <video width="100%" controls>
-            <source src="/videos/video.mp4" type="video/mp4">
-            مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
-        </video>
+            {% for video in videos %}
+
+            <div class="comment-box">
+
+                <h3>ویدیوی آموزشی</h3>
+
+                <video width="100%" controls>
+                   <source src="{{ url_for('video_file', filename=video) }}">
+                    مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                </video>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="comment-box">
+                <h3>هنوز ویدیویی آپلود نشده است.</h3>
+            </div>
+
+        {% endif %}
 
     </div>
 
