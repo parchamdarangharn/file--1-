@@ -1,16 +1,12 @@
 from flask import Flask, request, send_from_directory, redirect, url_for, session, render_template
 import os
+from werkzeug.utils import secure_filename
 
-# مسیر اصلی پروژه
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# ساخت Flask
 app = Flask(__name__, static_folder=BASE_DIR, static_url_path="")
-
-# کلید Session
 app.secret_key = "change-this-secret-key"
 
-# پوشه ویدیوها
 UPLOAD_FOLDER = os.path.join(BASE_DIR, "videos")
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
@@ -37,11 +33,8 @@ def login_page():
 
         password = request.form.get("password")
 
-        # رمز آزمایشی مدیر
         if password == "1234":
-
             session["admin_logged_in"] = True
-
             return redirect(url_for("admin_page"))
 
         return "رمز عبور اشتباه است!"
@@ -56,7 +49,6 @@ def login_page():
 @app.route("/admin")
 def admin_page():
 
-    # اگر مدیر وارد نشده باشد
     if not session.get("admin_logged_in"):
         return redirect(url_for("login_page"))
 
@@ -64,7 +56,7 @@ def admin_page():
 
 
 # =========================
-# خروج مدیر
+# خروج
 # =========================
 
 @app.route("/logout")
@@ -82,7 +74,6 @@ def logout():
 @app.route("/upload", methods=["POST"])
 def upload_video():
 
-    # فقط مدیر اجازه آپلود دارد
     if not session.get("admin_logged_in"):
         return redirect(url_for("login_page"))
 
@@ -94,25 +85,55 @@ def upload_video():
     if video.filename == "":
         return "ویدیویی انتخاب نشده!"
 
-    # ذخیره ویدیو
+    filename = secure_filename(video.filename)
+
     video_path = os.path.join(
         app.config["UPLOAD_FOLDER"],
-        video.filename
+        filename
     )
 
     video.save(video_path)
 
-    return "ویدیو با موفقیت آپلود شد!"
+    return redirect(url_for("videos_page"))
+
+
+# =========================
+# نمایش خودکار ویدیوها
+# =========================
 
 @app.route("/videos")
 def videos_page():
 
-    video_files = os.listdir(app.config["UPLOAD_FOLDER"])
+    videos = []
+
+    for filename in os.listdir(UPLOAD_FOLDER):
+
+        if filename.lower().endswith(
+            (".mp4", ".webm", ".ogg", ".mov", ".m4v")
+        ):
+            videos.append(filename)
+
+    videos.sort()
 
     return render_template(
         "videos.html",
-        videos=video_files
+        videos=videos
     )
+
+
+# =========================
+# پخش فایل ویدیو
+# =========================
+
+@app.route("/videos/<filename>")
+def video_file(filename):
+
+    return send_from_directory(
+        UPLOAD_FOLDER,
+        filename
+    )
+
+
 # =========================
 # اجرای برنامه
 # =========================
