@@ -19,7 +19,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route("/")
 def home():
-    return "FLASK OK"
+    return send_from_directory(BASE_DIR, "index.html")
 # =========================
 # ورود مدیر
 # =========================
@@ -136,5 +136,6 @@ def video_file(filename):
 # اجرای برنامه
 # =========================
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)
