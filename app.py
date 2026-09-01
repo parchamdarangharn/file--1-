@@ -19,9 +19,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route("/")
 def home():
-    return send_from_directory(BASE_DIR, "index.html")
-
-
+    return "FLASK OK"
 # =========================
 # ورود مدیر
 # =========================
