@@ -1,6 +1,7 @@
 ```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +19,7 @@
 
     <h3 class="title">مدیریت ویدیوها</h3>
 
+    <!-- آپلود ویدیو -->
     <div class="admin-box">
 
         <form action="/upload" method="POST" enctype="multipart/form-data">
@@ -40,43 +42,80 @@
 
     </div>
 
+
+    <!-- لیست ویدیوها -->
     <div class="admin-box">
 
         <h3>ویدیوهای آپلود شده</h3>
 
-        {% if videos %}
-
-            {% for video in videos %}
-
-                <div class="video-admin-item">
-
-                    <span>{{ video }}</span>
-
-                    <form
-                        action="{{ url_for('delete_video', filename=video) }}"
-                        method="POST"
-                        style="display:inline;"
-                    >
-
-                        <button type="submit" class="btn">
-                            🗑️ حذف
-                        </button>
-
-                    </form>
-
-                </div>
-
-            {% endfor %}
-
-        {% else %}
-
-            <p>هنوز ویدیویی آپلود نشده است.</p>
-
-        {% endif %}
+        <div id="video-list">
+            در حال دریافت ویدیوها...
+        </div>
 
     </div>
 
 </section>
+
+
+<script>
+
+async function loadVideos() {
+
+    const videoList = document.getElementById("video-list");
+
+    try {
+
+        const response = await fetch("/admin/videos");
+
+        const data = await response.json();
+
+        videoList.innerHTML = "";
+
+        if (data.videos.length === 0) {
+
+            videoList.innerHTML = "<p>هنوز ویدیویی آپلود نشده است.</p>";
+
+            return;
+        }
+
+        data.videos.forEach(function(video) {
+
+            const box = document.createElement("div");
+
+            box.style.marginBottom = "15px";
+
+            box.innerHTML = `
+                <span>${video}</span>
+
+                <form
+                    action="/delete/${encodeURIComponent(video)}"
+                    method="POST"
+                    style="display:inline; margin-right:10px;"
+                >
+
+                    <button type="submit" class="btn">
+                        🗑️ حذف
+                    </button>
+
+                </form>
+            `;
+
+            videoList.appendChild(box);
+
+        });
+
+    } catch (error) {
+
+        videoList.innerHTML =
+            "<p>خطا در دریافت لیست ویدیوها.</p>";
+
+    }
+
+}
+
+loadVideos();
+
+</script>
 
 </body>
 </html>

@@ -51,7 +51,28 @@ def admin_page():
         return redirect(url_for("login_page"))
 
     return send_from_directory(BASE_DIR, "admin.html")
+# =========================
+# دریافت لیست ویدیوها برای پنل مدیر
+# =========================
 
+@app.route("/admin/videos")
+def admin_videos():
+
+    if not session.get("admin_logged_in"):
+        return {"error": "دسترسی غیرمجاز"}, 403
+
+    videos = []
+
+    for filename in os.listdir(UPLOAD_FOLDER):
+
+        if filename.lower().endswith(
+            (".mp4", ".webm", ".ogg", ".mov", ".m4v")
+        ):
+            videos.append(filename)
+
+    videos.sort()
+
+    return {"videos": videos}
 # =========================
 # خروج
 # =========================
