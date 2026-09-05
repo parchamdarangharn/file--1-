@@ -50,7 +50,15 @@ def admin_page():
     if not session.get("admin_logged_in"):
         return redirect(url_for("login_page"))
 
-    return send_from_directory(BASE_DIR, "admin.html")
+    return render_template(
+    "admin.html",
+    videos=[
+        filename for filename in os.listdir(UPLOAD_FOLDER)
+        if filename.lower().endswith(
+            (".mp4", ".webm", ".ogg", ".mov", ".m4v")
+        )
+    ]
+)
 
 
 # =========================
@@ -64,7 +72,27 @@ def logout():
 
     return redirect(url_for("login_page"))
 
+# =========================
+# حذف ویدیو
+# =========================
 
+@app.route("/delete/<filename>", methods=["POST"])
+def delete_video(filename):
+
+    if not session.get("admin_logged_in"):
+        return redirect(url_for("login_page"))
+
+    filename = secure_filename(filename)
+
+    video_path = os.path.join(
+        app.config["UPLOAD_FOLDER"],
+        filename
+    )
+
+    if os.path.exists(video_path):
+        os.remove(video_path)
+
+    return redirect(url_for("admin_page"))
 # =========================
 # آپلود ویدیو
 # =========================

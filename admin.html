@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -19,21 +20,64 @@
 
     <div class="admin-box">
 
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
 
-        <label for="video">انتخاب ویدیو:</label>
+            <label for="video">انتخاب ویدیو:</label>
 
-        <input type="file" id="video" name="video" accept="video/*" required>
+            <input
+                type="file"
+                id="video"
+                name="video"
+                accept="video/*"
+                required
+            >
 
-        <button type="submit" class="btn">
-            آپلود ویدیو
-        </button>
+            <button type="submit" class="btn">
+                آپلود ویدیو
+            </button>
 
-    </form>
+        </form>
 
-</div>
+    </div>
+
+    <div class="admin-box">
+
+        <h3>ویدیوهای آپلود شده</h3>
+
+        {% if videos %}
+
+            {% for video in videos %}
+
+                <div class="video-admin-item">
+
+                    <span>{{ video }}</span>
+
+                    <form
+                        action="{{ url_for('delete_video', filename=video) }}"
+                        method="POST"
+                        style="display:inline;"
+                    >
+
+                        <button type="submit" class="btn">
+                            🗑️ حذف
+                        </button>
+
+                    </form>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>هنوز ویدیویی آپلود نشده است.</p>
+
+        {% endif %}
+
+    </div>
 
 </section>
 
 </body>
 </html>
+```
