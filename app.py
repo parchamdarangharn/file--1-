@@ -50,16 +50,7 @@ def admin_page():
     if not session.get("admin_logged_in"):
         return redirect(url_for("login_page"))
 
-    return render_template(
-    "admin.html",
-    videos=[
-        filename for filename in os.listdir(UPLOAD_FOLDER)
-        if filename.lower().endswith(
-            (".mp4", ".webm", ".ogg", ".mov", ".m4v")
-        )
-    ]
-)
-
+    return send_from_directory(BASE_DIR, "admin.html")
 
 # =========================
 # خروج
